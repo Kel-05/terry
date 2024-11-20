@@ -4,6 +4,7 @@ const http = new XMLHttpRequest();
 http.open("GET", "bible.txt", false);
 http.send();
 const bible = http.responseText.split("\n");
+bibleLen = bible.length - 2;
 
 function getTimestamp() {
     const date = new Date();
@@ -28,11 +29,13 @@ function callHolySpirit(event) {
     const pTimestamp   = document.createElement("p");
     const timestamp    = getTimestamp();
     
-    wordOfGod.innerHTML = "[" + counter + "]" + ": " + bible[Math.floor(Math.random() * bible.length)];
+    wordOfGod.innerHTML = "[" + counter + "]" + ": " + bible[Math.floor(Math.random() * bibleLen)];
     pTimestamp.innerHTML = "[" + timestamp + "]";
+    
     div.appendChild(wordOfGod);
     div.appendChild(pTimestamp);
     container.appendChild(div);
+    
     counter++;
 }
 
