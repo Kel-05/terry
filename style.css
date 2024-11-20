@@ -1,3 +1,67 @@
+@import url("gruvbox-light.css");
+
+* {
+    font-family: "Courier New", Courier, monospace;
+    font-size: medium;
+    color: var(--fg);
+}
+
 body {
-    background-color: blue;
+    background-color: var(--bg_s);
+    margin: 0;
+}
+
+.paragraph {
+    margin: 1vh 0.5vw;
+    padding: 12px;
+    background-color: var(--bg_h);
+}
+
+.icon-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.icon-bar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--yellow-dim);
+    
+    width: fit-content;
+    height: fit-content;
+    
+    transition: all 0.3s ease;
+    font-size: large;
+    text-decoration: none;
+    
+    padding: 12px;
+    margin: 1vh 0.5vw;
+}
+
+.icon-bar a img {
+    border-radius: 100%;
+    border: 2px solid var(--fg);
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 12px;
+}
+
+.icon-bar div {
+    flex-grow: 1;
+}
+
+.icon-bar a:not(.active):hover {
+    background-color: var(--yellow);
+}
+
+.icon-bar a.active, .icon-bar a:hover:active {
+    transition-property: none;
+    background-color: var(--fg);
+    color: var(--yellow-dim);
 }
