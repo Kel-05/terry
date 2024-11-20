@@ -35,6 +35,7 @@ function callHolySpirit(event) {
     div.appendChild(wordOfGod);
     div.appendChild(pTimestamp);
     container.appendChild(div);
+    window.scrollTo(0, document.body.scrollHeight);
     
     counter++;
 }
